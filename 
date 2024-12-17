@@ -1,0 +1,11 @@
+[33mcommit d4ce662807b415b5ee7144a973153e0db33afd1f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Muaz Afandi <muazafandi@abs.global>
+Date:   Sun Dec 15 21:00:58 2024 +0800
+
+    Initial commit: FroggyTasks project setup
+
+[33mcommit 892d8d517bd885914b3d8d3dd316d0c91264d28c[m
+Author: Muaz Afandi <muazafandi@abs.global>
+Date:   Sat Dec 14 12:25:52 2024 +0800
+
+    Initial commit from Create Next App

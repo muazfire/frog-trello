@@ -24,7 +24,7 @@ export default function Home() {
             fontWeight: 'bold',
             color: '#15803d'
           }}>
-            My Lily Pads
+            My Ponds
           </h1>
           <CreateBoardForm />
         </div>

@@ -27,7 +27,7 @@ export default function CreateBoardForm() {
         size="small"
         value={newBoardTitle}
         onChange={(e) => setNewBoardTitle(e.target.value)}
-        placeholder="Enter lily pad name..."
+        placeholder="Enter Pond Name"
         sx={{
           width: '200px',
           '& .MuiOutlinedInput-root': {

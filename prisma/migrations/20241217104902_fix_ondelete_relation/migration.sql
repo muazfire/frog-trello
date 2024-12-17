@@ -1,0 +1,9 @@
+-- AlterTable
+ALTER TABLE "Board" ADD COLUMN     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+-- AlterTable
+ALTER TABLE "Card" ADD COLUMN     "description" TEXT,
+ALTER COLUMN "order" DROP DEFAULT;
+
+-- AlterTable
+ALTER TABLE "List" ALTER COLUMN "order" DROP DEFAULT;
