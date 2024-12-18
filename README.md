@@ -9,7 +9,7 @@ FroggyTasks is a full-stack task management application inspired by Trello, buil
 - **Card System**: Add, edit, and move cards between lists
 - **Drag and Drop**: Intuitive drag-and-drop interface for cards and lists
 - **Real-time Updates**: Changes reflect immediately across the interface
-- **Responsive Design**: Works seamlessly on both desktop and mobile devices
+- **Responsive Design**: Works seamlessly on desktop
 
 ## Tech Stack
 
@@ -91,15 +91,11 @@ yarn dev
 
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](link-to-issues).
+Contributions, issues, and feature requests are welcome!
 
-## License
-
-This project is [MIT](link-to-license) licensed.
 
 ## Author
 
 **Muaz Bin Afandi**
-- Portfolio: [muazbinafandiportofolio.netlify.app](https://muazbinafandiportofolio.netlify.app/)
 - LinkedIn: [Muaz Afandi](https://www.linkedin.com/in/your-profile)
-- GitHub: [@yourusername](https://github.com/yourusername)
+
