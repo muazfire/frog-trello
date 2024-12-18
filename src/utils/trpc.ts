@@ -5,15 +5,25 @@ import type { AppRouter } from '../server/routers';
 
 export const trpc = createTRPCNext<AppRouter>({
   config() {
+    const getBaseUrl = () => {
+      if (typeof window !== 'undefined') {
+        
+        return '';
+      }
+     
+      return process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : 'http://localhost:3000'; 
+    };
+
     return {
       transformer: superjson,
       links: [
         httpBatchLink({
-          url: 'http://localhost:3000/api/trpc',
+          url: `${getBaseUrl()}/api/trpc`,
         }),
       ],
     };
   },
   ssr: true,
 });
-
