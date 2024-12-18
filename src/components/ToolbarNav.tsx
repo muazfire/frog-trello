@@ -8,12 +8,14 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { Leaf } from 'lucide-react';
+import { Leaf } from "lucide-react";
+import { useRouter } from "next/router";
 
-const navItems = ["My Lily Pads", "Pond Shop", "Frog Blog", "Tadpole Support"];
+const navItems = ["Home", "Tadpole Support"];
 
 export default function ToolbarNav() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const router = useRouter(); 
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -23,47 +25,51 @@ export default function ToolbarNav() {
     setAnchorEl(null);
   };
 
+  const handleNavigateHome = () => {
+    router.push("/"); 
+  };
+
   return (
-    <AppBar 
-    position="static" 
-    sx={{
-      backgroundColor: '#22c55e', // A brighter green that matches your image
-      boxShadow: 'none',  // Remove shadow to match your design
-    }}
-  >
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "#22c55e",
+        boxShadow: "none",
+      }}
+    >
       <Toolbar>
         {/* Logo / Brand Name */}
-        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+        <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
           <Box
             sx={{
               width: 40,
               height: 40,
-              backgroundColor: '#22c55e', // Green-500
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: '2px solid #4ade80', // Green-400
-              marginRight: 2
+              backgroundColor: "#22c55e",
+              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              border: "2px solid #4ade80",
+              marginRight: 2,
             }}
           >
-            <Leaf 
-              style={{ 
-                width: 24, 
-                height: 24, 
-                color: '#fff',
-                transform: 'rotate(45deg)'
-              }} 
+            <Leaf
+              style={{
+                width: 24,
+                height: 24,
+                color: "#fff",
+                transform: "rotate(45deg)",
+              }}
             />
           </Box>
-          <Typography 
-            variant="h6" 
-            component="div" 
-            sx={{ 
-              fontFamily: 'Roboto, Arial, sans-serif',
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              fontFamily: "Roboto, Arial, sans-serif",
               fontWeight: 700,
-              color: '#fff',
-              fontSize: '1.25rem'
+              color: "#fff",
+              fontSize: "1.25rem",
             }}
           >
             FroggyTasks
@@ -71,26 +77,25 @@ export default function ToolbarNav() {
         </Box>
 
         {/* Search Bar */}
-        <Box 
-          sx={{ 
+        <Box
+          sx={{
             display: { xs: "none", md: "flex" },
-            backgroundColor: '#22c55e',
-            borderRadius: '9999px',
-            border: '1px solid #4ade80',
-            padding: '6px 16px',
-            margin: '0 16px',
-            width: 200
+            backgroundColor: "#22c55e",
+            borderRadius: "9999px",
+            border: "1px solid #4ade80",
+            padding: "6px 16px",
+            margin: "0 16px",
+            width: 200,
           }}
         >
-          <input 
-            placeholder="Search lily pads..."
+          <input
+            placeholder="Search Ponds"
             style={{
-              backgroundColor: 'transparent',
-              border: 'none',
-              color: '#fff',
-              width: '100%',
-              outline: 'none',
-              
+              backgroundColor: "transparent",
+              border: "none",
+              color: "#fff",
+              width: "100%",
+              outline: "none",
             }}
           />
         </Box>
@@ -98,20 +103,21 @@ export default function ToolbarNav() {
         {/* Desktop Navigation Links */}
         <Box sx={{ display: { xs: "none", sm: "block" } }}>
           {navItems.map((item) => (
-            <Button 
-              key={item} 
-              sx={{ 
-                fontFamily: 'Roboto, Arial, sans-serif',
+            <Button
+              key={item}
+              onClick={item === "Home" ? handleNavigateHome : undefined} 
+              sx={{
+                fontFamily: "Roboto, Arial, sans-serif",
                 fontWeight: 600,
-                fontSize: '0.875rem',
+                fontSize: "0.875rem",
                 color: "#fff",
-                '&:hover': {
-                  backgroundColor: '#22c55e',
-                  borderRadius: '9999px'
+                "&:hover": {
+                  backgroundColor: "#22c55e",
+                  borderRadius: "9999px",
                 },
-                margin: '0 4px',
-                padding: '6px 16px',
-                textTransform: 'none' // Prevents all-caps
+                margin: "0 4px",
+                padding: "6px 16px",
+                textTransform: "none",
               }}
             >
               {item}
@@ -128,9 +134,9 @@ export default function ToolbarNav() {
             aria-label="menu"
             onClick={handleMenuOpen}
             sx={{
-              '&:hover': {
-                backgroundColor: '#22c55e',
-              }
+              "&:hover": {
+                backgroundColor: "#22c55e",
+              },
             }}
           >
             <MenuIcon />
@@ -141,21 +147,24 @@ export default function ToolbarNav() {
             onClose={handleMenuClose}
             PaperProps={{
               sx: {
-                backgroundColor: '#f0fdf4', // Green-50 for menu background
+                backgroundColor: "#f0fdf4",
                 borderRadius: 2,
-                border: '1px solid #86efac' // Green-300
-              }
+                border: "1px solid #86efac",
+              },
             }}
           >
             {navItems.map((item) => (
-              <MenuItem 
-                key={item} 
-                onClick={handleMenuClose}
+              <MenuItem
+                key={item}
+                onClick={() => {
+                  handleMenuClose();
+                  if (item === "My Ponds") handleNavigateHome(); 
+                }}
                 sx={{
-                  color: '#15803d', // Green-700
-                  '&:hover': {
-                    backgroundColor: '#dcfce7' // Green-100
-                  }
+                  color: "#15803d",
+                  "&:hover": {
+                    backgroundColor: "#dcfce7",
+                  },
                 }}
               >
                 {item}

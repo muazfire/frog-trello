@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Card,
-  CardContent,
-  Typography,
-  IconButton,
-  Box,
-  Paper,
-  Button,
-  TextField,
-} from '@mui/material';
+import {Card, CardContent, Typography, IconButton, Box, Paper, Button, TextField,} from '@mui/material';
 import { Trash } from 'lucide-react';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import CardModal from './CardModal';
@@ -73,18 +64,19 @@ export default function List({
       setSelectedCard(null);
     }
   };
-
+  
+ 
   return (
     <Paper
       elevation={3}
       sx={{
-        position: 'relative',
-        padding: 2,
-        borderRadius: 2,
-        backgroundColor: '#f0fdf4',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1.5,
+           position: 'relative',
+    padding: 2,
+    borderRadius: 2,
+    backgroundColor: '#f0fdf4',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 1.5,
       }}
     >
       {/* List Header with Title and Delete Button */}
@@ -164,7 +156,7 @@ export default function List({
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    onClick={() => handleOpenModal(card)} // Open modal on card click
+                    onClick={() => handleOpenModal(card)} 
                     variant="outlined"
                     sx={{
                       backgroundColor: '#dcfce7',

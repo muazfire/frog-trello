@@ -186,7 +186,17 @@ export default function BoardPage() {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        sx={{ width: '300px', flexShrink: 0 }}
+                        sx={{
+                          minWidth: '300px',   
+                          flexShrink: 0,          
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'space-between', 
+                          minHeight: '100%',       
+                          paddingBottom: '12px',  
+                          paddingTop: '16px',
+                          borderRadius: '8px' 
+                        }}
                       >
                         <List
                           title={list.title}

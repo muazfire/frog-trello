@@ -7,7 +7,7 @@ type BoardWithLists = {
   id: string;
   title: string;
   createdAt: Date;
-  lists: { id: string }[]; // Only include what you need
+  lists: { id: string }[]; 
 };
 
 type BoardGridProps = {
@@ -19,21 +19,21 @@ export default function BoardGrid({ boards }: BoardGridProps) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid 
         container 
-        spacing={3}  // Increased spacing between cards
+        spacing={3}  
       >
         {boards?.map((board) => (
           <Grid 
             item 
-            xs={12}      // Full width on mobile
-            sm={6}       // 2 columns on small screens
-            md={4}       // 3 columns on medium screens
-            lg={3}       // 4 columns on large screens
+            xs={12}      
+            sm={6}    
+            md={4}       
+            lg={3}       
             key={board.id}
           >
             <BoardCard 
   id={board.id}
   title={board.title}
-  listCount={board.lists?.length || 0} // Correctly calculate list count
+  listCount={board.lists?.length || 0} 
 />
           </Grid>
         ))}
