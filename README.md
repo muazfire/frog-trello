@@ -1,135 +1,105 @@
-# FroggyTasks - Task Management Application
+# FroggyTasks - A Trello-Inspired Task Management Application
 
-FroggyTasks is a full-stack web application inspired by Trello. It allows users to manage tasks through lists, with functionality to create, move, and delete lists and items. Built using **TypeScript**, **React**, **Next.js**, and **tRPC**, the application ensures seamless user interaction and data persistence.
-
----
+FroggyTasks is a full-stack task management application inspired by Trello, built with modern web technologies. It allows users to organize tasks into boards and lists with a smooth drag-and-drop interface.
 
 ## Features
 
-### Core Features
-- Create, delete, and manage lists.
-- Add items to lists and move them across lists.
-- Persistent state across browser refreshes and sessions using a PostgreSQL database.
-- Responsive UI optimized for both desktop and mobile.
-
-### Additional Features
-- User-friendly toolbar navigation.
-- Smooth transitions and animations.
-- Modern and clean UI design with Material-UI and custom styles.
-- Card Description and Comment
-
----
+- **Board Management**: Create, edit, and delete boards
+- **List Organization**: Create multiple lists within boards
+- **Card System**: Add, edit, and move cards between lists
+- **Drag and Drop**: Intuitive drag-and-drop interface for cards and lists
+- **Real-time Updates**: Changes reflect immediately across the interface
+- **Responsive Design**: Works seamlessly on both desktop and mobile devices
 
 ## Tech Stack
 
-### Frontend:
-- **React**
-- **Next.js**
-- **Material-UI**
+- **Frontend**:
+  - Next.js
+  - TypeScript
+  - Material UI
+  - TailwindCSS
+  - React Beautiful DND
 
-### Backend:
-- **tRPC** for seamless client-server communication.
-- **Prisma** as the ORM.
-- **PostgreSQL** as the database.
+- **Backend**:
+  - tRPC
+  - Prisma ORM
+  - PostgreSQL
+  - Clerk Authentication (Coming Soon)
 
-### State Management:
-- **Jotai** for efficient and scalable state management.
-
-### Bonus Tools:
-- **Docker** for containerized environments (optional).
-- **GitHub Actions** for CI/CD pipelines (if implemented).
-
----
-
-## Setup Instructions
+## Getting Started
 
 ### Prerequisites
-1. Install [Node.js](https://nodejs.org/) (version 16+ recommended).
-2. Install [PostgreSQL](https://www.postgresql.org/).
-3. Install [PNPM](https://pnpm.io/) (optional for monorepo setups).
-4. Ensure **Docker** is installed (optional).
 
----
+- Node.js (v16 or higher)
+- PostgreSQL
+- npm or yarn
 
-### Steps
+### Installation
 
-#### 1. Clone the Repository
+1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd <repository-folder>
+git clone https://github.com/yourusername/froggytasks.git
+cd froggytasks
 ```
 
-#### 2. Install Dependencies
+2. Install dependencies
 ```bash
 npm install
-# or if using pnpm
-pnpm install
+# or
+yarn install
 ```
 
-#### 3. Configure Environment Variables
-- Create a `.env` file in the root of the project with the following variables:
+3. Set up environment variables
+```bash
+cp .env.example .env
+```
+Fill in your environment variables in the `.env` file:
 ```env
-DATABASE_URL=postgresql://<username>:<password>@localhost:5432/froggytasks
+DATABASE_URL="postgresql://..."
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
 ```
-Replace `<username>` and `<password>` with your PostgreSQL credentials.
 
-#### 4. Run the Database Migrations
+4. Run database migrations
 ```bash
 npx prisma migrate dev
 ```
 
-#### 5. Start the Development Server
+5. Start the development server
 ```bash
 npm run dev
-# or if using pnpm
-pnpm dev
+# or
+yarn dev
 ```
-The application will be accessible at `http://localhost:3000`.
-
----
 
 ## Usage
 
-### Creating a Board
-- Navigate to the homepage and use the **Create Board** form to add a new task board.
+1. Create a new board by clicking "Create" button
+2. Add lists to your board using the "Add List" button
+3. Add cards to your lists
+4. Drag and drop cards between lists
+5. Click on cards to edit their details
 
-### Managing Lists
-- Add, delete, or move items within lists on the board page.
+## Future Enhancements
 
----
+- [ ] User Authentication and Authorization
+- [ ] Card Comments and Attachments
+- [ ] Board Sharing and Collaboration
+- [ ] Activity Log
+- [ ] Labels and Due Dates
+- [ ] Board Templates
 
-## Docker Setup (Optional)
+## Contributing
 
-To ensure a consistent development and deployment environment:
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](link-to-issues).
 
-1. Build the Docker Image:
-```bash
-docker build -t froggytasks .
-```
+## License
 
-2. Run the Container:
-```bash
-docker run -p 3000:3000 froggytasks
-```
+This project is [MIT](link-to-license) licensed.
 
-The application will be accessible at `http://localhost:3000`.
+## Author
 
----
-
-## Testing
-- Include any tests written for the application in a `tests/` directory.
-- Run tests using:
-```bash
-npm test
-```
-
----
-
-## Contribution
-Feel free to fork the repository and submit pull requests for improvements or new features.
-
----
-
-## Contact
-For any inquiries, reach out at [muazbinafandi@gmail.com]
-
+**Muaz Bin Afandi**
+- Portfolio: [muazbinafandiportofolio.netlify.app](https://muazbinafandiportofolio.netlify.app/)
+- LinkedIn: [Muaz Afandi](https://www.linkedin.com/in/your-profile)
+- GitHub: [@yourusername](https://github.com/yourusername)
